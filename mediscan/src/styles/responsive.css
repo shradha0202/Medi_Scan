@@ -1,0 +1,44 @@
+/* Responsive rules. Loaded last so they override earlier files. */
+.voice { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 45; display: grid; justify-items: end; gap: .75rem; }
+.voice-fab { width: 60px; height: 60px; border-radius: 50%; border: 0; display: grid; place-items: center; background: var(--marigold); color: var(--aubergine); box-shadow: 0 6px 20px rgba(50, 28, 54, .3); transition: transform .2s; }
+.voice-fab:hover { transform: scale(1.05); }
+.voice-fab.listening { background: var(--danger); color: var(--white); animation: pulse 1.4s ease-in-out infinite; }
+@keyframes pulse { 50% { box-shadow: 0 0 0 14px rgba(217, 75, 75, .18); } }
+.voice-panel { width: min(320px, calc(100vw - 2.5rem)); padding: 1rem; background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); display: grid; gap: .5rem; }
+.voice-head { display: flex; align-items: center; justify-content: space-between; }
+.voice-msg { padding: .5rem .75rem; background: var(--lavender); border-radius: 10px; font-weight: 600; }
+
+@media (max-width: 1024px) {
+  .hero { grid-template-columns: 1fr; padding: 2rem; }
+  .hero-frame { display: none; }
+  .scan-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 960px) {
+  .sidebar { transform: translateX(-100%); box-shadow: none; }
+  .sidebar.open { transform: none; box-shadow: 8px 0 30px rgba(0, 0, 0, .25); }
+  .sidebar-close { display: inline-grid; }
+  .main { margin-left: 0; }
+  .menu-btn { display: inline-grid; }
+  .navbar { padding: .6rem 1rem; flex-wrap: wrap; }
+  .navbar-brand { display: inline-flex; }
+  .navbar-search { order: 3; flex-basis: 100%; max-width: none; }
+  .content { padding: 1.25rem 1rem 6rem; }
+  .footer { padding: 1rem; }
+}
+@media (max-width: 640px) {
+  h1 { font-size: 1.6rem; }
+  .hero { padding: 1.5rem; border-radius: 22px; }
+  .hero h1 { font-size: 2rem; }
+  .quick-card { grid-template-columns: 1fr; padding: 1.25rem; }
+  .daily-tip { flex-wrap: wrap; }
+  .med-card { flex-wrap: wrap; }
+  .med-side { width: 100%; grid-auto-flow: column; justify-content: space-between; justify-items: start; align-items: center; }
+  .reminder { flex-direction: column; align-items: flex-start; }
+  .fields { grid-template-columns: 1fr; }
+  .result-head { padding: 1rem; }
+  .result-body { padding: 1rem; }
+  .result-actions .btn, .row-actions .btn, .scan-actions .btn { flex: 1 1 100%; }
+  .inline-form { flex-direction: column; }
+  .section-head { flex-wrap: wrap; }
+  .tips-grid { grid-template-columns: 1fr; }
+}

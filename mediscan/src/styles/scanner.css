@@ -1,0 +1,14 @@
+/* Scanner page and camera viewport. */
+.scan-layout { display: grid; grid-template-columns: 1.3fr 1fr; gap: 1.25rem; align-items: start; }
+.scan-side { display: grid; gap: 1.25rem; }
+.scan-side h3 { display: flex; align-items: center; gap: .5rem; }
+.guide ul { margin: .6rem 0 0; padding-left: 1.2rem; display: grid; gap: .3rem; color: var(--muted); }
+.scanner { display: grid; gap: 1rem; }
+.scan-viewport { position: relative; aspect-ratio: 4 / 3; width: 100%; background: var(--aubergine); border-radius: var(--radius); overflow: hidden; }
+.scan-viewport video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: none; }
+.scan-viewport.running video { display: block; }
+.scan-idle { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: .5rem; color: #CBBBCF; }
+.scan-frame { position: absolute; inset: 14%; pointer-events: none; }
+.scan-frame .laser { left: 4%; right: 4%; top: 4%; }
+.scan-status { position: absolute; left: 50%; bottom: .75rem; transform: translateX(-50%); padding: .3rem .9rem; border-radius: 999px; background: rgba(50, 28, 54, .8); color: var(--white); font-size: .85rem; white-space: nowrap; }
+.scan-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
